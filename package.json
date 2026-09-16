@@ -1,0 +1,20 @@
+{
+  "name": "vikas-malik-portfolio",
+  "version": "1.0.0",
+  "description": "Executive Personal Portfolio Website for Vikas Malik",
+  "scripts": {
+    "dev": "npx -y serve -l 3000 .",
+    "start": "npx -y serve -l 3000 .",
+    "preview": "python3 -m http.server 3000",
+    "deploy": "npx vercel",
+    "deploy:prod": "npx vercel --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "vikas-malik",
+    "growth-marketing",
+    "google"
+  ],
+  "author": "Vikas Malik",
+  "license": "MIT"
+}
