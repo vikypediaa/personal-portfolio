@@ -22,6 +22,11 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
 }
 
+.section-alt {
+  background-color: var(--bg-secondary);
+  transition: background-color var(--transition-normal);
+}
+
 /* Background Atmosphere Glows */
 .bg-mesh {
   position: fixed;

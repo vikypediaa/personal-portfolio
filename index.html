@@ -20,6 +20,16 @@
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Immediate Theme Initialization to Prevent Flash of Dark/Light -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 <body>
 
@@ -332,7 +342,7 @@
     </section>
 
     <!-- Competencies & MarTech Arsenal -->
-    <section class="section" id="competencies" style="background: rgba(16, 21, 34, 0.3);">
+    <section class="section section-alt" id="competencies">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Expertise</span>
@@ -550,7 +560,7 @@
     </section>
 
     <!-- Education & Certifications -->
-    <section class="section" id="credentials" style="background: rgba(16, 21, 34, 0.3);">
+    <section class="section section-alt" id="credentials">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Qualifications</span>

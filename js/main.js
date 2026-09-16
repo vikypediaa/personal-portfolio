@@ -35,6 +35,11 @@ function initTheme() {
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
+    if (themeToggleBtn) {
+      const isLight = theme === 'light';
+      themeToggleBtn.setAttribute('title', isLight ? 'Switch to executive dark mode' : 'Switch to clean light mode');
+      themeToggleBtn.setAttribute('aria-label', isLight ? 'Switch to executive dark mode' : 'Switch to clean light mode');
+    }
     if (themeIcon) {
       if (theme === 'light') {
         // Moon icon for switching to dark
