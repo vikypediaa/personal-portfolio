@@ -70,44 +70,62 @@ Simply double-click `index.html` or open it in any web browser (Chrome, Safari, 
 
 ---
 
-## 🌐 Deploying to Vercel
+## 🌐 Deploying to GoDaddy (cPanel / Web Hosting)
 
-The portfolio is pre-configured for **Vercel** with a custom [`vercel.json`](file:///Users/vikasmalik/Desktop/Life%20OS%20/Personal%20Portfolio%20/vercel.json) supporting:
-- **Clean URLs** (no ugly `.html` extensions)
-- **High-performance HTTP Cache-Control headers** for static assets, CSS, and JS
-- **Enterprise security headers** (`X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`)
-- **Zero build step required** (instant deploys)
+Because your portfolio is built with pure semantic **HTML5, Vanilla CSS, and JavaScript**, it is **100% compatible with GoDaddy Web Hosting** (or any cPanel Linux/Apache hosting). No Node.js server, build tools, or databases are needed on the server!
 
-### Method 1: Deploy via Vercel CLI (Fastest)
+We have also created a pre-configured [`.htaccess`](file:///Users/vikasmalik/Desktop/Life%20OS%20/Personal%20Portfolio%20/.htaccess) file with:
+- Automatic **HTTPS redirection**
+- **Gzip compression** for instant page loading
+- **Long-term browser caching** for images, fonts, CSS, and JS
+- **Security headers** (`X-Frame-Options`, `X-Content-Type-Options`)
 
-Run the following in your terminal:
-```bash
-# Preview deployment
-npm run deploy
+---
 
-# Production deployment
-npm run deploy:prod
-```
-The CLI will ask you to confirm the project settings (accept defaults: framework "Other", root directory `./`).
+### Step-by-Step GoDaddy cPanel Upload (Fastest & Easiest)
 
-### Method 2: Deploy via GitHub Integration (Recommended for Continuous Deployment)
-
-1. Initialize a git repository and push to GitHub:
+1. **Generate or use the ready zip package**:
+   In your project root, run:
    ```bash
-   git init
-   git add .
-   git commit -m "Initial portfolio setup"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-   git push -u origin main
+   npm run package:godaddy
    ```
-2. Open the [Vercel Dashboard](https://vercel.com/new).
-3. Click **"Add New Project"** > **"Import Git Repository"**.
-4. Select your portfolio repo and click **Deploy**.
-5. Any subsequent `git push` to your repository will automatically trigger an instant deployment.
+   *(A pre-packaged file [`godaddy-portfolio.zip`](file:///Users/vikasmalik/Desktop/Life%20OS%20/Personal%20Portfolio%20/godaddy-portfolio.zip) has already been created for you!)*
 
-### Custom Domain on Vercel
-Once deployed on Vercel:
-1. Go to your Project on Vercel > **Settings** > **Domains**.
-2. Add your custom domain (e.g., `vikasmalik.com`).
-3. Follow the DNS records shown (add the CNAME / A record in your domain registrar like Namecheap, GoDaddy, Google Domains / Squarespace). Vercel provisions free automatic SSL certificates!
+2. **Log in to GoDaddy**:
+   - Go to your [GoDaddy Account](https://account.godaddy.com/).
+   - Under **Web Hosting**, find your hosting plan and click **Manage** or **cPanel Admin**.
+
+3. **Open File Manager**:
+   - In cPanel, open **File Manager** (under *Files*).
+   - In the left sidebar, click on **`public_html`** (this is your root website directory).
+   - *Note: If you have a default `index.html` or GoDaddy placeholder page in `public_html`, delete or backup that file.*
+
+4. **Upload & Extract**:
+   - Click the **Upload** button in the top toolbar.
+   - Select or drag-and-drop `godaddy-portfolio.zip`.
+   - Once upload reaches 100%, return to `public_html`.
+   - Right-click `godaddy-portfolio.zip` and select **Extract** (extract directly into `public_html`).
+   - You can then delete the `.zip` file from the server.
+
+5. **Ensure Hidden Files Are Visible (`.htaccess`)**:
+   - In File Manager, click **Settings** (top right gear icon).
+   - Check **"Show Hidden Files (dotfiles)"** and click **Save**.
+   - Verify that `.htaccess` is present in `public_html`.
+
+6. **Done!**:
+   - Visit your domain (e.g. `yourdomain.com`). Your sleek dark executive portfolio is now live!
+
+---
+
+### Alternative: Deploy via FTP / SFTP (FileZilla or Cyberduck)
+
+If you prefer uploading directly via an FTP client:
+1. In GoDaddy cPanel, find your **FTP Accounts** or use your cPanel username & password.
+2. Connect to your host with host name `ftp.yourdomain.com` (or your server IP).
+3. Navigate to the `/public_html/` folder.
+4. Drag and drop the following files/folders into `/public_html/`:
+   - `index.html`
+   - `css/`
+   - `js/`
+   - `assets/`
+   - `.htaccess`

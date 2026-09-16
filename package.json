@@ -6,8 +6,8 @@
     "dev": "npx -y serve -l 3000 .",
     "start": "npx -y serve -l 3000 .",
     "preview": "python3 -m http.server 3000",
-    "deploy": "npx vercel",
-    "deploy:prod": "npx vercel --prod"
+    "package:godaddy": "zip -r godaddy-portfolio.zip index.html css js assets .htaccess -x '*.DS_Store*'",
+    "deploy:vercel": "npx vercel --prod"
   },
   "keywords": [
     "portfolio",
