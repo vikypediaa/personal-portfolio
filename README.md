@@ -4,6 +4,9 @@ A sleek, responsive, executive-grade personal portfolio website tailored for **V
 
 Built with semantic **HTML5**, **Vanilla CSS (Design Tokens, Glassmorphism, Responsive Grid)**, and **Vanilla JavaScript** &mdash; delivering instant page loads, zero build overhead, and maximum flexibility.
 
+- **GitHub Repository**: [https://github.com/vikypediaa/personal-portfolio](https://github.com/vikypediaa/personal-portfolio)
+- **Live GitHub Mirror**: [https://vikypediaa.github.io/personal-portfolio/](https://vikypediaa.github.io/personal-portfolio/)
+
 ---
 
 ## 🌟 Key Features
